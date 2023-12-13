@@ -5,7 +5,7 @@ import os
 import subprocess
 import time
 
-projects = ["01-HelloWorld"]
+projects = ["01-HelloWorld", "02-HelloWorld", "03-SimpleTypesConversion", "04-ValueVsReferenceTypes"]
 dotnetVariants = ["dotnet", "dotnet.exe"]
 dotnet   = ""
 
@@ -59,6 +59,9 @@ def buildAll(command):
 #--------------------------------------------------------------------------------------------------------------------
 #                                                   TARGETs
 def targetBuild():
+    buildAll([dotnet, "build"])
+
+def targetRun():
     buildAll([dotnet, "run"])
 
 def targetClean():
@@ -102,7 +105,7 @@ def runTarget(targetName):
 
 #--------------------------------------------------------------------------------------------------------------------
 #                                                    MAIN
-functions  = {'build': targetBuild, 'clean': targetClean, 'help': targetHelp, 'configure': targetConfig, 'all': ['build']}
+functions  = {'build': targetBuild, 'run': targetRun, 'build-and-run': ['build', 'run'], 'clean': targetClean, 'help': targetHelp, 'configure': targetConfig, 'all': ['build']}
 targetName = 'help'
 
 if len(sys.argv) > 1:

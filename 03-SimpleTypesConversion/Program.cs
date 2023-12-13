@@ -1,10 +1,16 @@
 ﻿/*************************************************************************************************\
 |                                                                                                 |
-|                    Hello-World - Without main-body (Since .NET 8)                               |
+|                  Explicit/Implicit Conversion of simple data types                              |
 |                                                                                                 |
 |                                                                                                 |
 \*************************************************************************************************/
 
 using System;
 
-Console.WriteLine("Hello, World #1!");
+int aInt     = 123456;
+long aLong   = aInt;        // Implicit type conversion (as in C++)
+
+short aShort = (short)aInt; // Explicit type conversion (as in C++)
+
+Console.WriteLine("Type conversion results: {0} {1} {2}", aInt, aLong, aShort);
+
