@@ -5,7 +5,7 @@ import os
 import subprocess
 import time
 
-projects = ["01-HelloWorld", "02-HelloWorld", "03-SimpleTypesConversion", "04-ValueVsReferenceTypes"]
+projects = ["01-HelloWorld", "02-HelloWorld", "03-SimpleTypesConversion", "04-ValueVsReferenceTypes", "05-numeric-literals"]
 dotnetVariants = ["dotnet", "dotnet.exe"]
 dotnet   = ""
 
