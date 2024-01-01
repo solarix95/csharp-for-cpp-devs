@@ -4,8 +4,9 @@ import sys
 import os
 import subprocess
 import time
+import re
 
-projects = ["01-HelloWorld", "02-HelloWorld", "03-SimpleTypesConversion", "04-ValueVsReferenceTypes", "05-numeric-literals"]
+projects = []
 dotnetVariants = ["dotnet", "dotnet.exe"]
 dotnet   = ""
 
@@ -26,6 +27,17 @@ def removeDirectory(path):
                 os.rmdir(dir_path)
         print("About do delete:", path)
         os.rmdir(path)
+
+def codeSubdirs():
+    pattern = re.compile(r'^\d{2}-\w+')
+    matching_subdirectories = []
+    for root, dirs, files in os.walk("."):
+        for directory in dirs:
+            if pattern.match(directory):
+                matching_subdirectories.append(os.path.join(root, directory))
+    matching_subdirectories.sort()
+    return matching_subdirectories
+
 
 def runCommand(command, silent=False):
     print("Execute:", command)  
@@ -111,6 +123,7 @@ targetName = 'help'
 if len(sys.argv) > 1:
     targetName = sys.argv[1]
 
+projects = codeSubdirs()
 runTarget("configure")
 runTarget(targetName)
 
