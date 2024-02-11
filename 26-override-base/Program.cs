@@ -23,7 +23,7 @@ class GameAsset {    // base class
 
 class GameTexture : GameAsset { // derived class
 
-    public GameTexture() {
+    public GameTexture():base() /* explicit call of baseclass ctors */  {
         id = 1;
     }
 
