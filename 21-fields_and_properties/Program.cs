@@ -33,7 +33,7 @@ class MyClass {
     }
 
     public string name; // that's a "field". In C++ a public "member" or "member variable"
-    public int    age;
+    public int    age;  // having "age" and "Age" technically possible.. but  I would say that's an "antipattern"..
     public string Name {
         get { Console.WriteLine("Who reads the name?"); return name;  }
         set { name = value; Console.WriteLine("Name changed!"); }

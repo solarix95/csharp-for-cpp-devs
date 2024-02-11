@@ -15,10 +15,10 @@ Cheatsheet "Starting C# for Linux/Windows"
 - Dotnet-SDK from https://dotnet.microsoft.com/en-us/download
 - Visual Studio Code from https://code.visualstudio.com/download
 - How to start in code:
--- Command "code"
--- CTRL-SHIFT-P for creating new project
+   - Command "code"
+   - CTRL-SHIFT-P for creating new project
 - Command "dotnet" (qmake + make)
--- $ dotnet new console -n "HelloWorld"
--- $ dotnet run
--- $ dotnet deploy
+   - $ dotnet new console -n "HelloWorld"
+   - $ dotnet run
+   - $ dotnet deploy
 
